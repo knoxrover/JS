@@ -63,7 +63,7 @@ function getCategory(name) {
     let ext = path.extname(name);
     ext = ext.slice(1);
     // console.log(ext);
-    for (let type in types) {
+    for (let type in ftypes) {
         let cTypeArray = types[type];
         for (let i = 0; i < cTypeArray.length; i++) {
             if (ext == cTypeArray[i]) {
@@ -76,7 +76,5 @@ function getCategory(name) {
 
 
 module.exports = {
-
-    orgFxn : orgfn
-    
+    orgFxn : orgfn  
 }
