@@ -1,5 +1,6 @@
 let fs = require("fs");
 let path = require("path");
+let types = require("./ftypes");
 
 function orgfn(src){
 // console.log("Organize command executed for the directory ",src);
@@ -7,22 +8,26 @@ function orgfn(src){
     if (src == undefined) {
         // destPath = process.cwd();
         return;
-    } else {
-        let doesExist = fs.existsSync(src);
-        if (doesExist) {
+    } 
+    else {
 
+        let isExists = fs.existsSync(src);
+
+        if (isExists) {
             destPath = path.join(src,"organized_files");
             if (fs.existsSync(destPath) == false) { 
                 fs.mkdirSync(destPath);
             }
-        } else {
+        } 
+        
+        else {
 
             console.log("pls enter correct path");
             return;
         }
     }
 
-    organizeHelper(src, destPath);
+    organizeHelper(src,destPath);
 }
 
 
@@ -56,7 +61,9 @@ function sendFiles(srcFilePath, dest, category) {
 }
 function getCategory(name) {
     let ext = path.extname(name);
+    console.log(ext);
     ext = ext.slice(1);
+    console.log(ext);
     for (let type in types) {
         let cTypeArray = types[type];
         for (let i = 0; i < cTypeArray.length; i++) {
