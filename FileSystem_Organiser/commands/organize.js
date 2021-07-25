@@ -78,3 +78,12 @@ function getCategory(name) {
 module.exports = {
     orgFxn : orgfn  
 }
+
+/*
+fs.txt belongs to -->  documents
+fs.txt copied to  documents
+fsbasics.js belongs to -->  jsFiles
+fsbasics.js copied to  jsFiles
+pathbasics.js belongs to -->  jsFiles
+pathbasics.js copied to  jsFiles
+*/
