@@ -2,7 +2,7 @@ let fs = require("fs");
 let path = require("path");
 
 function orgfn(src){
-console.log("Organize command executed for the directory "+src);
+// console.log("Organize command executed for the directory ",src);
     let destPath;
     if (src == undefined) {
         // destPath = process.cwd();
