@@ -55,15 +55,14 @@ function sendFiles(srcFilePath, dest, category) {
     let fileName = path.basename(srcFilePath);
     let destFilePath = path.join(categoryPath, fileName);
     fs.copyFileSync(srcFilePath, destFilePath);
-    fs.unlinkSync(srcFilePath);
+    // fs.unlinkSync(srcFilePath);
     console.log(fileName, "copied to ", category);
 
 }
 function getCategory(name) {
     let ext = path.extname(name);
-    console.log(ext);
     ext = ext.slice(1);
-    console.log(ext);
+    // console.log(ext);
     for (let type in types) {
         let cTypeArray = types[type];
         for (let i = 0; i < cTypeArray.length; i++) {
