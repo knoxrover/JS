@@ -1,5 +1,3 @@
-
-
 let hobj = require("./commands/help.js");
 let org = require("./commands/organize.js");
 let treeObj = require("./commands/tree.js");

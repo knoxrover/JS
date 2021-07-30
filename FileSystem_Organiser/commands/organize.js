@@ -3,7 +3,7 @@ let path = require("path");
 let types = require("./ftypes");
 
 function orgfn(src){
-// console.log("Organize command executed for the directory ",src);
+console.log("Organize command executed for the directory ",src);
     let destPath;
     if (src == undefined) {
         // destPath = process.cwd();
@@ -29,7 +29,6 @@ function orgfn(src){
 
     organizeHelper(src,destPath);
 }
-
 
 function organizeHelper(src, dest) {
     // 3. identify categories of all the files present in that input directory  ->
