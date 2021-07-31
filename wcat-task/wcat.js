@@ -3,6 +3,14 @@ let path = require("path");
 
 
 let inputArr = process.argv.slice(2);
+let filesArr=[];
+
+for(let i=0;i<inputArr.length;i++){
+    let fir
+}
+
+
+
 
 let filesArr = inputArr;
 
