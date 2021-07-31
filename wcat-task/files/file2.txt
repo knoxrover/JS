@@ -1,0 +1,6 @@
+file2 contents 
+
+hello
+
+
+test file 2
