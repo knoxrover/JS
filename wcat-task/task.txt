@@ -19,4 +19,4 @@
  5---  node wcat.js -b filepath ----> gives numbers to all non-empty lines. 
 
 
- ___WE CAN MIX AND MATCH WITH MULTIPLE OPTIONS AT ONCE____
+ ____WE CAN MIX AND MATCH WITH MULTIPLE OPTIONS AT ONCE____
