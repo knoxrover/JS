@@ -1,0 +1,22 @@
+ build wcat command
+
+ It is used to display or make a copy content of one or more files in the terminal
+
+
+ General Syntax : 
+ node wcat.js [options] [filepaths]
+ option to remove big line break (-s)
+ option to add line number to non empty lines (-b)
+ option to add line numbers to all lines(-n)
+
+
+ commands : 
+
+ 1---  node wcat.js filepath --> displays content of the file in the terminal
+ 2---  node wcat.js filepath1 filepath2 filepath3  ---> displays content of all the files in the terminal in (concatinated form) in the terminal
+ 3---  node wcat.js -s filepath1 filepath2 filepath3.... ---> converts big line breaks into single line breaks
+ 4---  node wcat.js -n filepath ----> gives numbering to all lines 
+ 5---  node wcat.js -b filepath ----> gives numbers to all non-empty lines. 
+
+
+ ___WE CAN MIX AND MATCH WITH MULTIPLE OPTIONS AT ONCE____
