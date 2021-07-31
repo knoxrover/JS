@@ -20,3 +20,8 @@
 
 
  ____WE CAN MIX AND MATCH WITH MULTIPLE OPTIONS AT ONCE____
+
+
+ Edge Cases: 
+    1---- If file entered is not found then it gives file doesnt exist error.
+    2---- -n and -b options which are mutually exclusive so if user types both the options together, then only first option is considered.
