@@ -4,7 +4,7 @@ let treeObj = require("./commands/tree.js");
 
 
 
-let inputArr = process.argv.slice(2);
+let inputArr = process.argv.slice(2); // 2 words skipped (input parameters seperated by space)
 let command = inputArr[0];
 
 switch(command){

@@ -5,4 +5,6 @@ let types = {
     app: ['exe', 'dmg', 'pkg', "deb"],
     jsFiles: ['js']
 }
+
+
 module.exports = types;

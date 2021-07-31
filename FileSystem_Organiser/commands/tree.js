@@ -12,15 +12,13 @@ function treefn(src){
 
     let parent = path.basename(src);
 
-    let comPath = "-----" + parent;
+    let comPath = "|-----" + parent;
 
     for(let i=0;i<content.length;i++){
         comPath = comPath + "\n\t" + "|------"+content[i];
     }
     console.log(comPath);
  
-
-
 }
 
 module.exports = {
