@@ -25,3 +25,5 @@
  Edge Cases: 
     1---- If file entered is not found then it gives file doesnt exist error.
     2---- -n and -b options which are mutually exclusive so if user types both the options together, then only first option is considered.
+    3---- -s and any or both of -n & -b are present then s will be executed first and then -n / -b according to second rule.
+    
