@@ -6,22 +6,20 @@ let inputArr = process.argv.slice(2);
 let filesArr=[];
 let optionArr =[];
 
+
+// *****files path , options diffrentiate *******************
+
 for(let i=0;i<inputArr.length;i++){
     let firstChar = inputArr[i].charAt(0);
     if(firstChar=="-"){
         optionArr.push(inputArr[i]);
-
+    }
+    else{
+        filesArr.push(inputArr[i]);
     }
 }
 
-
-let filesArr = inputArr;
-
-
-
-
-
-********check if all files are present*********
+// ********check if all     files are present*********
 
 for(let i=0;i<filesArr.length;i++){
     let ans = fs.existsSync(filesArr[i])
@@ -31,32 +29,33 @@ for(let i=0;i<filesArr.length;i++){
     }
 }
 
-`````````content append```````````
+// `````````content append```````````
 
 let content="";
 for(let i=0;i<filesArr.length;i++){
-
-    content=content + fs.readFileSync(filesArr[i])+"\r\n";
+    let cFileContent = fs.readFileSync(filesArr[i])
+    content = content + cFileContent+"\r\n";
 }
-console.log(content);
+// console.log(content);
 
-let contentArr = content.split("\r\n");
+let contentArr = content.split("\n");
 
 // console.log(contentArr);
 //console.log(optionArr);
 
 // -s check
 
-let isPresent = optionArr.includes("-s");
-if(isPresent){
-    for(let i =0 ;i<contentArr.length;i++){
-        if(contentArr[i]==""&& contentArr[i-1]=="");
+let isSPresent = optionArr.includes("-s");
+if(isSPresent){
+    for(let i =1 ;i<contentArr.length;i++){
+        if(contentArr[i]==""&& contentArr[i-1]==""){
         contentArr[i]=null
     }
-    else if(contentArr[i]==""&&contentArr[i-1]==null){
+    else if(contentArr[i]== "" && contentArr[i-1]==null){
         contentArr[i]=null;
     }
 }
+
 
 let tempArr = [];
 for(let i=0;i<contentArr.length;i++){
@@ -66,6 +65,7 @@ for(let i=0;i<contentArr.length;i++){
 }
 contentArr=tempArr;
 
+}
 
 //-n -b
 
@@ -79,7 +79,9 @@ if(indexofN>-1&&indexofB>-1){ // both are present
     if(indexofN<indexofB){
         finalOpt="-n";
     }
-    else {finalOpt="-b"}
+    else {
+        finalOpt="-b"
+    }
     
     }
     else{
@@ -96,7 +98,6 @@ if(indexofN>-1&&indexofB>-1){ // both are present
     if(finalOpt!=""){
         if(finalOpt=="-n"){
             modifyContentbyN(contentArr);
-
         }
         else if(finalOpt=="-b"){
             modifyContentbyB(contentArr);
@@ -105,17 +106,26 @@ if(indexofN>-1&&indexofB>-1){ // both are present
 
     function modifyContentbyN(contentArr){
 
-        for(let i=0;i<contentArr.length;i++){
-            contentArr[i]=(i+1)+". "+contentArr[i];
+        for(let i=1;i<=contentArr.length;i++){
+            contentArr[i]=i+". "+contentArr[i];
         }
 
     }
 
+    function modifyContentbyB(contentArr){
+        let count=1;
+        for(let i=0;i<=contentArr.length;i++){
+            if(contentArr[i]!==""){
+                contentArr[i] = count +". " + contentArr[i];
+                count++;
+            }
+
+        }
+    }
 
 
 
 
 // console.log(contentArr);
 //console.log("final option is",   finalOpt);
-// console.log(contentArr.join("\r\n"));
-
+console.log(contentArr.join("\n"));
