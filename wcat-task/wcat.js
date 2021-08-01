@@ -19,10 +19,11 @@ for(let i=0;i<inputArr.length;i++){
     }
 }
 
-// ********check if all     files are present*********
+// ********check if all  files are present*********
+
 
 for(let i=0;i<filesArr.length;i++){
-    let ans = fs.existsSync(filesArr[i])
+    let ans = fs.existsSync(filesArr[i]);
     if(ans==false){
         console.log("File doesn't exist");
         return;
@@ -33,15 +34,15 @@ for(let i=0;i<filesArr.length;i++){
 
 let content="";
 for(let i=0;i<filesArr.length;i++){
-    let cFileContent = fs.readFileSync(filesArr[i])
-    content = content + cFileContent+"\r\n";
+    let cFileContent = fs.readFileSync(filesArr[i]);
+    content = content + cFileContent+"\n";
 }
 // console.log(content);
 
-let contentArr = content.split("\r");
+let contentArr = content.split("\n");
 
 
-console.log(contentArr);
+// console.log(contentArr);
 //console.log(optionArr);
 
 // -s check
@@ -108,6 +109,7 @@ if(indexofN > -1 &&indexofB > -1 ){ // both are present
         for(let i=1;i<=contentArr.length;i++){
             contentArr[i]= i +". "+contentArr[i];
         }
+        console.log(contentArr.join("\n"));
     }
 
     function modifyContentbyB(contentArr){
@@ -119,9 +121,10 @@ if(indexofN > -1 &&indexofB > -1 ){ // both are present
             }
 
         }
+        console.log(contentArr.join("\n"));
     }
 
 
 // console.log(contentArr);
 //console.log("final option is",   finalOpt);
-console.log(contentArr.join("\r\n"));
+// console.log(contentArr.join("\n"));
