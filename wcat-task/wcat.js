@@ -36,9 +36,9 @@ for(let i=0;i<filesArr.length;i++){
     let cFileContent = fs.readFileSync(filesArr[i])
     content = content + cFileContent+"\r\n";
 }
-// console.log(content);
+console.log(content);
 
-let contentArr = content.split("\n");
+let contentArr = content.split("\r\n");
 
 // console.log(contentArr);
 //console.log(optionArr);
@@ -48,14 +48,13 @@ let contentArr = content.split("\n");
 let isSPresent = optionArr.includes("-s");
 if(isSPresent){
     for(let i =1 ;i<contentArr.length;i++){
-        if(contentArr[i]==""&& contentArr[i-1]==""){
+        if(contentArr[i]=="" && contentArr[i-1]==""){
         contentArr[i]=null
     }
     else if(contentArr[i]== "" && contentArr[i-1]==null){
         contentArr[i]=null;
     }
 }
-
 
 let tempArr = [];
 for(let i=0;i<contentArr.length;i++){
@@ -75,19 +74,19 @@ let indexofB = optionArr.indexOf("-b");
 let finalOpt = "";
 
 //decide a final option and call modification based on option
-if(indexofN>-1&&indexofB>-1){ // both are present
+if(indexofN > -1 &&indexofB > -1 ){ // both are present
     if(indexofN<indexofB){
-        finalOpt="-n";
+        finalOpt = "-n";
     }
     else {
-        finalOpt="-b"
+        finalOpt="-b";
     }
     
     }
     else{
         //if there is any one option -> -n,-b
 
-        if(indexofN>-1){
+        if(indexofN > -1){
             finalOpt="-n";
         }
         else if(indexofB>-1){
@@ -105,11 +104,9 @@ if(indexofN>-1&&indexofB>-1){ // both are present
     }
 
     function modifyContentbyN(contentArr){
-
         for(let i=1;i<=contentArr.length;i++){
-            contentArr[i]=i+". "+contentArr[i];
+            contentArr[i]= i +". "+contentArr[i];
         }
-
     }
 
     function modifyContentbyB(contentArr){
@@ -126,4 +123,4 @@ if(indexofN>-1&&indexofB>-1){ // both are present
 
 // console.log(contentArr);
 //console.log("final option is",   finalOpt);
-console.log(contentArr.join("\n"));
+console.log(contentArr.join("\r\n"));
