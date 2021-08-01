@@ -36,11 +36,12 @@ for(let i=0;i<filesArr.length;i++){
     let cFileContent = fs.readFileSync(filesArr[i])
     content = content + cFileContent+"\r\n";
 }
-console.log(content);
+// console.log(content);
 
-let contentArr = content.split("\r\n");
+let contentArr = content.split("\r");
 
-// console.log(contentArr);
+
+console.log(contentArr);
 //console.log(optionArr);
 
 // -s check
