@@ -124,8 +124,6 @@ if(indexofN>-1&&indexofB>-1){ // both are present
     }
 
 
-
-
 // console.log(contentArr);
 //console.log("final option is",   finalOpt);
 console.log(contentArr.join("\n"));
