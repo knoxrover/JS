@@ -29,10 +29,10 @@ for (let i = 0; i < filesArr.length; i++) {
 let content = "";
 for (let i = 0; i < filesArr.length; i++) {
     let cFileContent = fs.readFileSync(filesArr[i])
-    content = content + cFileContent + "\r\n";
+    content = content + cFileContent + "\n";
 }
 // console.log(content)
-let contentArr = content.split("\r\n")
+let contentArr = content.split("\n")
 // console.log(contentArr);
 // console.log(optionArr);
 // -s check 
@@ -103,4 +103,4 @@ function modifyContentByB(contentArr) {
 // console.log("final option", finalOption);
 // console.log(contentArr)
 // console.log("```````````````");
-console.log(contentArr.join("\r\n"));
+console.log(contentArr.join("\n"));

@@ -4,7 +4,7 @@ let path = require("path");
 
 let inputArr = process.argv.slice(2);
 let filesArr=[];
-let optionArr =[];
+let optionArr = [];
 
 
 // *****files path , options diffrentiate *******************
@@ -19,6 +19,8 @@ for(let i=0;i<inputArr.length;i++){
     }
 }
 
+// console.log(optionArr);
+// console.log(filesArr);
 // ********check if all  files are present*********
 
 
@@ -60,11 +62,15 @@ if(isSPresent){
 
 let tempArr = [];
 for(let i=0;i<contentArr.length;i++){
-    if(contentArr[i]!==null){
+    if(contentArr[i]!=null){
         tempArr.push(contentArr[i]);
     }
 }
 contentArr=tempArr;
+
+for(let k in tempArr){
+    console.log(tempArr[k]);
+}
 
 }
 
@@ -81,7 +87,7 @@ if(indexofN > -1 &&indexofB > -1 ){ // both are present
         finalOpt = "-n";
     }
     else {
-        finalOpt="-b";
+        finalOpt = "-b";
     }
     
     }
@@ -96,6 +102,7 @@ if(indexofN > -1 &&indexofB > -1 ){ // both are present
         }
     }
 
+
     if(finalOpt!=""){
         if(finalOpt=="-n"){
             modifyContentbyN(contentArr);
@@ -106,15 +113,15 @@ if(indexofN > -1 &&indexofB > -1 ){ // both are present
     }
 
     function modifyContentbyN(contentArr){
-        for(let i=1;i<=contentArr.length;i++){
-            contentArr[i]= i +". "+contentArr[i];
+        for(let i=0;i<contentArr.length;i++){
+            contentArr[i]= (i+1) +". "+contentArr[i];
         }
         console.log(contentArr.join("\n"));
     }
 
     function modifyContentbyB(contentArr){
         let count=1;
-        for(let i=0;i<=contentArr.length;i++){
+        for(let i=0;i<contentArr.length;i++){
             if(contentArr[i]!==""){
                 contentArr[i] = count +". " + contentArr[i];
                 count++;
@@ -126,5 +133,5 @@ if(indexofN > -1 &&indexofB > -1 ){ // both are present
 
 
 // console.log(contentArr);
-//console.log("final option is",   finalOpt);
+// console.log("final option is",   finalOpt);
 // console.log(contentArr.join("\n"));
