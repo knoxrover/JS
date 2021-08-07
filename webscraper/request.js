@@ -33,7 +33,9 @@ bowlExtr(html);
 
 console.log();
 
+// lbc function
 
+console.log();
 // function dataExtr(html){
 //     //search tool
 //     let searchTool = cheerio.load(html);
@@ -55,19 +57,27 @@ console.log();
 function bowlExtr(html){
     let searchTool1 = cheerio.load(html);
     let bowlers = searchTool1(".table.bowler tbody tr");
-    let elemArr = searchTool1(".table.bowler");
+    // let elemArr = searchTool1(".table.bowler");
+
+//hwt bowler
+    let bowler = "";
+    let hwt = 0;
+
+
+
+
     // console.log(bowlers);
 
-    console.log(elemArr.length);
+    // console.log(elemArr.length);
 
 
-    let htmlData = "";
+    // let htmlData = "";
 
-    for(let i=0;i<elemArr.length;i++){
-      htmlData += searchTool1(elemArr[i]).html();
-    }
+    // for(let i=0;i<elemArr.length;i++){
+    //   htmlData += searchTool1(elemArr[i]).html();
+    // }
 
-    fs.writeFileSync("tabledata.html",htmlData);
+    // fs.writeFileSync("tabledata.html",htmlData);
 
     // console.log(htmlData);
 
@@ -76,7 +86,16 @@ function bowlExtr(html){
         let name = searchTool1(cols[0]).text();   /// whenever using index based variables, use searchTool
         let wickets = searchTool1(cols[4]).text();
         console.log("Name : "+name + "  |||  Wickets : ",wickets);
+
+
+        if(wickets>=hwt){
+            hwt = wickets;
+            bowler = name;
+        }
+
     }
+    console.log('````````````````````');
+    console.log(bowler+"    "+hwt);
 
 
 }
