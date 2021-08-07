@@ -1,9 +1,6 @@
 const cheerio = require("cheerio");
-const { contents } = require("cheerio/lib/api/traversing");
-const { getElementById } = require("domutils");
 const fs = require("fs");
 let request = require("request");
-
 
 
 let url1 = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/royal-challengers-bangalore-vs-sunrisers-hyderabad-eliminator-1237178/full-scorecard";
