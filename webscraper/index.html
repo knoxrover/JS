@@ -8,18 +8,60 @@
     <h2></h2>
     <h3></h3>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-s"
+    <title>document</title>
+    <style>
+        li{
+        color:blue;
+        }
+
+        div ol{ 
+            <!-- //direct descendants -->
+            color : red;
+        }
+
+        div>p{
+            <!-- //indirect descendants ... div>sp>ol -->
+        }
+
+        .some-class {
+            color: blanchedalmond;
+        }
+
+<!-- combinator .m1.m2 for element with 2 classes and .m1 .m2 for nested descendant classes -->
+<!-- span for specific element in class selector inline modif and div is for class whole block ....  -->
+
+
+
+
+    </style>
 </head>
 
 <body>
 
     <!-- ordered list -->
-    <ol> 
+<ol> 
     <li>hi</li>
     <li>hello</li>
     <li>heyy</li>
     <li>yolo</li>
-
 </ol>
+
+
+<p class="some-class">select me &next guy</p>
+<p class="some-class">im next guy</p>
+
+
+<div>
+    <ol>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+
+    </ol>
+</div>
+
     <a href="url">anchor text</a> <!--anchor tag-->
     <!--paragraph tag-->
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis delectus libero aperiam similique ad animi autem reiciendis voluptas earum voluptatibus qui quo consequatur, quas consequuntur veniam hic sit. Sapiente, amet!
@@ -31,14 +73,18 @@
             <li>heyy</li>
             <li>yolo</li>
 
-            
-        
         </ul>
 
         <span> <style></style></span>
     </p>
 
     <div> containter tags
+
+        <span>
+            <p>
+                indirect element
+            </p>
+        </span>
 
     </div>
 
