@@ -49,12 +49,12 @@ function cb1(error,response,html){
 
 function getAllScoreCard(html){
     console.log("`````````````````````````````````````````````````````````````````````");
-    let $ = cheerio.load(html);
-    let scorelinkArr = $('a[data-hover="Scorecard"]');
+    let searchTool = cheerio.load(html);
+    let scorelinkArr = searchTool('a[data-hover="Scorecard"]');
     for(let i=0;i<scorelinkArr.length;i++){
-        let scorecardlink = $(scorelinkArr[i]).attr("href");
+        let scorecardlink = searchTool(scorelinkArr[i]).attr("href");
         let fullpageL = `https://www.espncricinfo.com${scorecardlink}`;
-        console.log(fullpageL);
+        // console.log(fullpageL);
         
 
 
