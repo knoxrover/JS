@@ -7,6 +7,8 @@ let url1 = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/royal-challe
 
 request(url1,cb);
 
+// handle errors / function directive using cb function i.e calls to bowlers data which inturn calls to cb for profile links 
+
 function cb(error,response,html){
     //console.log(error) displays if any error
     //console.log('body:',html) displays html
@@ -23,6 +25,7 @@ dateExt(html);
 
 }
 
+//function to extract link of each bowler row from .table.bowler tbody tr and finds link from each row then calls to dob extractor
 
 function dateExt(html){
 
@@ -39,6 +42,8 @@ for(let i=0;i<bowlers.length;i++){
     request(fullLink,newCb);
 }
 }
+
+// dateExt will call to each profile link using cb and 
 
 function newCb(error,response,html){
     if(error){
