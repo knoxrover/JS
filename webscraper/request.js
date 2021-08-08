@@ -62,7 +62,7 @@ function bowlExtr(html){
 //hwt bowler
     let bowler = "";
     let hwt = 0;
-
+    
 
 
 
