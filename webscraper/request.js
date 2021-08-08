@@ -63,9 +63,6 @@ function bowlExtr(html){
     let bowler = "";
     let hwt = 0;
     
-
-
-
     // console.log(bowlers);
 
     // console.log(elemArr.length);
