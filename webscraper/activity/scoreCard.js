@@ -27,9 +27,17 @@ function scoreExt(html){
     let elemsArr = searchTool(".Collapsible");
     let scoreCard = "";
     for(let i=0;i<elemsArr.length;i++){
-        scoreCard+= searchTool(elemsArr[i]).html();
-    }
-    // fs.writeFileSync("match.html",scoreCard);
+        // scoreCard = searchTool(elemsArr[i]).html();
+        let teamName = searchTool(elemsArr[i]).find("h5").text();
+        teamName = teamName.split("INNINGS")[0];
+        console.log(teamName);
 
-    
+        
+        // fs.writeFileSync(`innings${i+1}.html`,scoreCard);
+    }   
+    // fs.writeFileSync("match.html",scoreCard);
+    //get team name from the scraped scorecards data
+
+
+
 }
