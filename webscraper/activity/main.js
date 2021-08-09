@@ -5,7 +5,9 @@ let request = require("request");
 
 let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595";
 
+
 request(url,cb);
+
 
 function cb(error,response,html){
 
@@ -20,6 +22,7 @@ dataExtr(html);
 }
 
 }
+
 
 function dataExtr(html){
     let searchTool = cheerio.load(html);
@@ -47,6 +50,7 @@ function cb1(error,response,html){
     }
 }
 
+
 function getAllScoreCard(html){
     console.log("`````````````````````````````````````````````````````````````````````");
     let searchTool = cheerio.load(html);
@@ -54,11 +58,8 @@ function getAllScoreCard(html){
     for(let i=0;i<scorelinkArr.length;i++){
         let scorecardlink = searchTool(scorelinkArr[i]).attr("href");
         let fullpageL = `https://www.espncricinfo.com${scorecardlink}`;
-        // console.log(fullpageL);
-        
-
+        console.log(fullpageL);
 
     }
 
 }
-
