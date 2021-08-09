@@ -22,6 +22,14 @@ function cb2(error,response,html){
     
     }
 
-    function scoreExt(html){
-        
+function scoreExt(html){
+    let searchTool  = cheerio.load(html);
+    let elemsArr = searchTool(".Collapsible");
+    let scoreCard = "";
+    for(let i=0;i<elemsArr.length;i++){
+        scoreCard+= searchTool(elemsArr[i]).html();
     }
+    // fs.writeFileSync("match.html",scoreCard);
+
+    
+}
