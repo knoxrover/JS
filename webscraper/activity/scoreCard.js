@@ -26,6 +26,7 @@ function scoreExt(html){
     let searchTool  = cheerio.load(html);
     let elemsArr = searchTool(".Collapsible");
     let scoreCard = "";
+    //get team name from the scraped scorecards data
     for(let i=0;i<elemsArr.length;i++){
         // scoreCard = searchTool(elemsArr[i]).html();
         let teamName = searchTool(elemsArr[i]).find("h5").text();
@@ -36,7 +37,7 @@ function scoreExt(html){
         // fs.writeFileSync(`innings${i+1}.html`,scoreCard);
     }   
     // fs.writeFileSync("match.html",scoreCard);
-    //get team name from the scraped scorecards data
+    
 
 
 
