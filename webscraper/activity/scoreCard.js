@@ -3,10 +3,12 @@ const fs = require("fs");
 
 let request = require("request");
 
-let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/mumbai-indians-vs-chennai-super-kings-1st-match-1216492/full-scorecard";
+// let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/mumbai-indians-vs-chennai-super-kings-1st-match-1216492/full-scorecard";
 
 
+function singleMatchProcess(url)  {
 request(url,cb2);
+}
 
 function cb2(error,response,html){
 
@@ -21,7 +23,7 @@ function cb2(error,response,html){
     }
     }
 
-function scoreExt(html){
+function scoreExt(html){    
     let searchTool  = cheerio.load(html);
     let elemsArr = searchTool(".Collapsible");
     let scoreCard = "";
@@ -57,4 +59,7 @@ function scoreExt(html){
 
 
 
+}
+module.exports = {
+    smp :  singleMatchProcess,
 }

@@ -5,9 +5,10 @@ let request = require("request");
 
 let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595";
 
+let scoreCardObj = require("./scoreCard");
+
 
 request(url,cb);
-
 
 function cb(error,response,html){
 
@@ -59,7 +60,8 @@ function getAllScoreCard(html){
         let scorecardlink = searchTool(scorelinkArr[i]).attr("href");
         let fullpageL = `https://www.espncricinfo.com${scorecardlink}`;
         console.log(fullpageL);
+        scoreCardObj.smp(fullpageL);
 
     }
-
+    console.log("`````````````````````````````````````````````````````````````````````");
 }
