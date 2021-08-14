@@ -7,3 +7,9 @@
 
 
 ![image](https://user-images.githubusercontent.com/66634103/129437391-53e82d0f-19e8-4470-a09f-257866b81870.png)
+
+
+//multiple async
+
+![image](https://user-images.githubusercontent.com/66634103/129438941-b67f3283-c7d3-4db4-b618-8309596b0ba4.png)
+
