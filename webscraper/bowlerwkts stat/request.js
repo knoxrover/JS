@@ -33,7 +33,7 @@ bowlExtr(html);
 
 console.log();
 
-// lbc function
+// lbc function last ball commentary
 
 console.log();
 // function dataExtr(html){
@@ -53,13 +53,18 @@ console.log();
 //     // console.log(moduleName);
 // }
 
+console.log();
 
+
+//extract bowlers data name and wickets 
 function bowlExtr(html){
     let searchTool1 = cheerio.load(html);
     let bowlers = searchTool1(".table.bowler tbody tr");
     // let elemArr = searchTool1(".table.bowler");
 
-//hwt bowler
+
+
+//hwt bowler highest wicket taker
     let bowler = "";
     let hwt = 0;
     
