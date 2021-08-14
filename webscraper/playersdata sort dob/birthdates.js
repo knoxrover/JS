@@ -60,7 +60,7 @@ function newCb(error,response,html){
     }
 }
 
-
+//function to get dobs only .....no sorting applied
 function getBd(html){
     let searchTool = cheerio.load(html);
     let headingsArr = searchTool(".player-card-description");
