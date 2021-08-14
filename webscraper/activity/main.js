@@ -59,9 +59,8 @@ function getAllScoreCard(html){
     for(let i=0;i<scorelinkArr.length;i++){
         let scorecardlink = searchTool(scorelinkArr[i]).attr("href");
         let fullpageL = `https://www.espncricinfo.com${scorecardlink}`;
-        console.log(fullpageL);
+        // console.log(fullpageL);
         scoreCardObj.smp(fullpageL);
-
     }
     console.log("`````````````````````````````````````````````````````````````````````");
 }
