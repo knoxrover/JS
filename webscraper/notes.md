@@ -13,3 +13,13 @@
 
 ![image](https://user-images.githubusercontent.com/66634103/129438941-b67f3283-c7d3-4db4-b618-8309596b0ba4.png)
 
+
+//async serial
+
+![image](https://user-images.githubusercontent.com/66634103/129440327-858ca636-7b09-4d1f-ba9b-0dd03e851040.png)
+
+//async parallel
+
+![image](https://user-images.githubusercontent.com/66634103/129440349-0953d67b-b1fa-4da1-a33c-244d166ee782.png)
+
+
