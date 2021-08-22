@@ -15,3 +15,5 @@ function cb2(err,content){
 }
 
 console.log("After");
+
+// home work  = same above n files to read in serial way
