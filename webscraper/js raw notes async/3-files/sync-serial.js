@@ -7,3 +7,6 @@ console.log("content "+content);
 content = fs.readFileSync("file3.txt");
 console.log("content "+content);
 console.log("After");
+
+
+//SYNC NOT DECLARED -> NEEDS MANDATORY CB FUNCTION
