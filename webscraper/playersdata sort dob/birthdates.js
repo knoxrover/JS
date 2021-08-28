@@ -96,7 +96,7 @@ function sortBD(bowlersArr){
 
     function singleFn(obj){
         let name  = obj.name;
-        let age = obj.name;
+        let age = obj.age;
         let ageArr = obj.age.split(" ");
         let years  = ageArr[0].slice(0,ageArr[0].length-1);
         let days = ageArr[1].slice(0,ageArr[1].length-1);
@@ -104,7 +104,7 @@ function sortBD(bowlersArr){
         return {
             name : name,
             ageInDays:ageInDays,
-            age : age,
+            age : age
         }
 
     }
@@ -112,14 +112,14 @@ function sortBD(bowlersArr){
     let sortedArray  =  newArr.sort(cb);
 
     function cb(objA, objB){
-        return objB.ageInDays - objA.ageInDays;
+        return objA.ageInDays - objB.ageInDays;
     }
     let finalArr = sortedArray.map(removeageIndays);
 
     function removeageIndays(obj){
         return {
             name : obj.name,
-            age : obj.age,
+            age : obj.age
         }
     }
     console.table(finalArr);
