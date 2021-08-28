@@ -2,6 +2,7 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 let path = require("path");
 let request = require("request");
+let xlsx = require("xlsx");
 
 // let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/mumbai-indians-vs-chennai-super-kings-1st-match-1216492/full-scorecard";
 
@@ -10,8 +11,7 @@ function singleMatchProcess(url)  {
 request(url,cb2);
 }
 
-function cb2(error,response,html){
-
+function cb2(error,response,html){ 
     if(error){
         console.log(error);
     }
@@ -74,27 +74,56 @@ function scoreExt(html){
             fs.mkdirSync(dirPath)
         }
         // playerfile 
-        let playerFilePath = path.join(dirPath, playerName + ".json");
+        let playerFilePath = path.join(dirPath, playerName + ".xlsx");
         let playerArray = [];
         if (fs.existsSync(playerFilePath) == false) {
             playerArray.push(obj);
         } else {
             // append
-            playerArray = getContent(playerFilePath);
+            playerArray = excelReader(playerFilePath, playerName); // changed to excelreader
             playerArray.push(obj);
         }
+
         // write in the files
-        writeContent(playerFilePath, playerArray);
+        //writeContent(playerFilePath, playerArray);
+
+        excelWriter(playerFilePath, playerArray, playerName);
     }
-    function getContent(playerFilePath) {
-        let content = fs.readFileSync(playerFilePath);
-        return JSON.parse(content);
-    }
+
+    // function getContent(playerFilePath) {
+    //     let content = fs.readFileSync(playerFilePath);
+    //     return JSON.parse(content);
+    // }
+
     function writeContent(playerFilePath, content) {
         let jsonData = JSON.stringify(content)
         fs.writeFileSync(playerFilePath, jsonData);
     }
-    
+
+function excelWriter(filePath, json, sheetName) {
+    // workbook create
+    let newWB = xlsx.utils.book_new();
+    // worksheet
+    let newWS = xlsx.utils.json_to_sheet(json);
+    xlsx.utils.book_append_sheet(newWB, newWS, sheetName);
+    // excel file create 
+    xlsx.writeFile(newWB, filePath);
+}
+// // json data -> excel format convert
+// // -> newwb , ws , sheet name
+// // filePath
+// read 
+//  workbook get
+function excelReader(filePath, sheetName) {
+    // player workbook
+    let wb = xlsx.readFile(filePath);
+    // get data from a particular sheet in that wb
+    let excelData = wb.Sheets[sheetName];
+    // sheet to json 
+    let ans = xlsx.utils.sheet_to_json(excelData);
+    return ans;
+}
+
 module.exports = {
-    smp :  singleMatchProcess,
+    smp :  singleMatchProcess
 }
