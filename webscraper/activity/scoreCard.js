@@ -1,6 +1,6 @@
 const cheerio = require("cheerio");
 const fs = require("fs");
-
+let path = require("path");
 let request = require("request");
 
 // let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/mumbai-indians-vs-chennai-super-kings-1st-match-1216492/full-scorecard";
@@ -23,43 +23,78 @@ function cb2(error,response,html){
     }
     }
 
-function scoreExt(html){    
+function scoreExt(html){
     let searchTool  = cheerio.load(html);
-    let elemsArr = searchTool(".Collapsible");
-    let scoreCard = "";
-    //get team name from the scraped scorecards data
-    for(let i=0;i<elemsArr.length;i++){
-        // scoreCard = searchTool(elemsArr[i]).html();
-        let teamName = searchTool(elemsArr[i]).find("h5").text();
+    let bothInningArr = searchTool(".Collapsible");
+    for (let i = 0; i < bothInningArr.length; i++) {
+        // scoreCard = searchTool(bothInningArr[i]).html();
+        let teamNameElem = searchTool(bothInningArr[i]).find("h5");
+        let teamName = teamNameElem.text();
+        // console.log(teamName);
         teamName = teamName.split("INNINGS")[0];
-        console.log("```````````````````````````````");
-        console.log(teamName);
-        console.log("```````````````````````````````");
-
-        //get player name by gng to batsman table 
-        //then to tbody then tr and then checking
-        //for tr with 8 cols
-        // then taking that and getting[0] for name
-        let batsmenTableBodyArr = searchTool(elemsArr[i]).find(".table.batsman tbody tr");
-        for(let i=0;i<batsmenTableBodyArr.length;i++){
-            let numberOfTd = searchTool(batsmenTableBodyArr[i]).find("td");
-            if(numberOfTd.length==8){
-                // console.log("You are valid!");
-                let playerName = searchTool(numberOfTd[0]).text();
-                console.log(playerName);
+        // console.log(teamName);
+        teamName = teamName.trim();
+        // console.log(teamName);
+        let batsManTableBodyAllRows = searchTool(bothInningArr[i]).find(".table.batsman tbody tr");
+        console.log(batsManTableBodyAllRows.length)
+        // type cohersion loops -> 
+        for (let j = 0; j < batsManTableBodyAllRows.length; j++) {
+            let numberofTds = searchTool(batsManTableBodyAllRows[j]).find("td");
+            // console.log(numberofTds.length);
+            if (numberofTds.length == 8) {
+                // console.log("You are valid")
+                let playerName = searchTool(numberofTds[0]).text().trim();
+                let runs = searchTool(numberofTds[2]).text();
+                let balls = searchTool(numberofTds[3]).text();
+                let fours = searchTool(numberofTds[5]).text();
+                let sixes = searchTool(numberofTds[6]).text();
+                // myTeamName	name	venue	date opponentTeamName	result	runs	balls	fours	sixes	sr
+   console.log(playerName, "played for", teamName, "scored", runs, "in", balls, "with ", fours, "fours and ", sixes, "sixes");
+                processPlayer(playerName, teamName, runs, balls, fours, sixes);
             }
         }
-        
-
-
-     // fs.writeFileSync(`innings${i+1}.html`,scoreCard);
-    }   
-    // fs.writeFileSync("match.html",scoreCard);
-    
-
-
-
+        console.log("``````````````````````````````````````")
+        // fs.writeFileSync(`innning${i+1}.html`,scoreCard);
+    }
+    // players name
 }
+
+    function processPlayer(playerName, teamName, runs, balls, fours, sixes) {
+        let obj = {
+            playerName,
+            teamName,
+            runs,
+            balls,
+            fours,
+            sixes
+        }
+        let dirPath = path.join(__dirname,teamName);
+    //    folder 
+        if (fs.existsSync(dirPath) == false) {
+            fs.mkdirSync(dirPath)
+        }
+        // playerfile 
+        let playerFilePath = path.join(dirPath, playerName + ".json");
+        let playerArray = [];
+        if (fs.existsSync(playerFilePath) == false) {
+            playerArray.push(obj);
+        } else {
+            // append
+            playerArray = getContent(playerFilePath);
+            playerArray.push(obj);
+        }
+        // write in the files
+        writeContent(playerFilePath, playerArray);
+    }
+    function getContent(playerFilePath) {
+        let content = fs.readFileSync(playerFilePath);
+        return JSON.parse(content);
+    }
+    function writeContent(playerFilePath, content) {
+        let jsonData = JSON.stringify(content)
+        fs.writeFileSync(playerFilePath, jsonData);
+    }
+    
 module.exports = {
     smp :  singleMatchProcess,
 }
