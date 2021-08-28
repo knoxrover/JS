@@ -16,10 +16,19 @@ console.log("before");
 //first file read then -> cb call
 
 /// deadlock wrong executed -> https://prnt.sc/1qnomqm
+//can be solved using recrusion and without foor loop 
 
-for(let i=0;i<files.length;){
+function serialReader(i){
+if(i==files.length) return;
+
 fs.readFile(files[i],function cb(err,data){
     console.log("data"+data);
+serialReader(i+1);
 });
-i++; //deadlock avoided coz no clash btwn for loop increments and cb waiting for ending 
+
 }
+
+serialReader(0);
+console.log("after");
+
+
