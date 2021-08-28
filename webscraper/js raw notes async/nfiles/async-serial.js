@@ -20,6 +20,6 @@ console.log("before");
 for(let i=0;i<files.length;){
 fs.readFile(files[i],function cb(err,data){
     console.log("data"+data);
-    i++;
 });
+i++; //deadlock avoided coz no clash btwn for loop increments and cb waiting for ending 
 }
