@@ -4,3 +4,23 @@
 *.lock filter=lfs diff=lfs merge=lfs -text
 *.md filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
+*.ts filter=lfs diff=lfs merge=lfs -text
+*.pdl filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/93.0.4577.0/Chromium Framework filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/93.0.4577.0/Helpers/Chromium Helper (Alerts).app/Contents/MacOS/Chromium Helper (Alerts) filter=lfs diff=lfs merge=lfs -text
+*.icns filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/93.0.4577.0/Helpers/Chromium Helper (GPU).app/Contents/MacOS/Chromium Helper (GPU) filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/93.0.4577.0/Helpers/Chromium Helper (Plugin).app/Contents/MacOS/Chromium Helper (Plugin) filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/93.0.4577.0/Helpers/Chromium Helper (Renderer).app/Contents/MacOS/Chromium Helper (Renderer) filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/93.0.4577.0/Helpers/Chromium Helper.app/Contents/MacOS/Chromium Helper filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/93.0.4577.0/Helpers/app_mode_loader filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/93.0.4577.0/Helpers/chrome_crashpad_handler filter=lfs diff=lfs merge=lfs -text
+*.nexe filter=lfs diff=lfs merge=lfs -text
+*.dylib filter=lfs diff=lfs merge=lfs -text
+*.pak filter=lfs diff=lfs merge=lfs -text
+*.dat filter=lfs diff=lfs merge=lfs -text
+*.bin filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/93.0.4577.0/XPCServices/AlertNotificationService.xpc/Contents/MacOS/AlertNotificationService filter=lfs diff=lfs merge=lfs -text
+/node_modules/puppeteer/.local-chromium/mac-901912/chrome-mac/Chromium.app/Contents/MacOS/Chromium filter=lfs diff=lfs merge=lfs -text
+*.strings filter=lfs diff=lfs merge=lfs -text
+*.manifest filter=lfs diff=lfs merge=lfs -text

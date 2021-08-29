@@ -43,7 +43,7 @@ function scoreExt(html){
             // console.log(numberofTds.length);
             if (numberofTds.length == 8) {
                 // console.log("You are valid")
-                let playerName = searchTool(numberofTds[0]).text().trim();
+                let playerName = searchTool(numberofTds[0]).text().trim().split('(c)')[0];
                 let runs = searchTool(numberofTds[2]).text();
                 let balls = searchTool(numberofTds[3]).text();
                 let fours = searchTool(numberofTds[5]).text();
@@ -80,7 +80,7 @@ function scoreExt(html){
             playerArray.push(obj);
         } else {
             // append
-            playerArray = excelReader(playerFilePath, playerName); // changed to excelreader
+            playerArray = excelReader(playerFilePath, playerName); // changed to excelreader from contentreader
             playerArray.push(obj);
         }
 
