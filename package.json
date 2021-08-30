@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2a2d7fb9eece5b9c4854c6b070a7c27206a362d0ce8993b0e8d9c91728b86c2
-size 174
+{
+  "dependencies": {
+    "puppeteer": "^10.2.0",
+    "request": "^2.88.2",
+    "xlsx": "^0.17.1"
+  }
+}
