@@ -30,6 +30,7 @@ browserStartPromise.then(function(browserObj){
         console.log("google page opened");
         //keyboard -?> data entry;
         let waitForTypingPromise = page.type("input[title='Search']","pepcoding");
+        // need to do waiting in between to avoid code break
         return waitForTypingPromise;
     }).then(function (){
         //keyboard specific keys 
