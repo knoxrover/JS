@@ -45,23 +45,16 @@ browserStartPromise.then(function(browserObj){
         let elemClickPromise = page.click(".LC20lb.DKV0Md");
         return elemClickPromise;
     }).then(function(){
-        let waitModalPromise = page.waitForSelector("#lp_modal_close",{visible:true});
-        return waitModalPromise;
-    }).then(function (){
-        let clickModal = page.click("#lp_modal_close",{delay:100});
-        return clickModal;
-    }).then(function(){
         //page element -> cheerio
         let allLisPromise = page.$$(".site-nav-li");
         return allLisPromise;
     }).then(function (allElem){
-        let elemWillBeClickedPromise = allElem[6].click({delay : 100});
+        let elemWillBeClickedPromise = allElem[7].click({delay : 100});
         return elemWillBeClickedPromise;
     }).then(function () {
         let waitPromise = page.waitFor(2000);
         return waitPromise;
-    }).
-    then(function(){
+    }).then(function(){
         let listofOpenedTabs = browser.pages();
         return listofOpenedTabs;
     }).then(function(array){
