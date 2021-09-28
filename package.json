@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "axios": "^0.21.4",
+    "minimist": "^1.2.5",
     "puppeteer": "^10.2.0",
     "request": "^2.88.2",
     "xlsx": "^0.17.1"
