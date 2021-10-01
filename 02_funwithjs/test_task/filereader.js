@@ -29,4 +29,4 @@ for(let i =0 ;i<entitties.length;i++){
 
 let filePath = path.join(inputDir, "summary.txt");
 fs.writeFileSync(filePath, content);
-console.log("summary file created");
+console.log("summary file is succesfully created");
