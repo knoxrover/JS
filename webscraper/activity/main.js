@@ -3,7 +3,7 @@ const fs = require("fs");
 
 let request = require("request");
 
-let url = "https://www.espncricinfo.com/series/ipl-2020-21-1210595";
+let url = "https://www.espncricinfo.com/series/ipl-2021-1249214";
 
 let scoreCardObj = require("./scoreCard");
 
