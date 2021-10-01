@@ -21,7 +21,7 @@ var ASE = function (designation , relocationAllowance)
   //======================
   };
 }; 
-var emp = new Employee(1231,"Accenture");            // Parent Object Created
+var emp = new Employee(1231,"ABC");            // Parent Object Created
 ASE.prototype = emp;                                 // Parent-Child Relationship Created between Employee-ASE
-var ase = new ASE("ASE",2500);                       // Child Class Object Created
+var ase = new ASE("Software Engineer",2500);                       // Child Class Object Created
 

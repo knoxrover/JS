@@ -4,11 +4,11 @@
 
 let emp = {
     empno:111,
-    empname: "Accenture",
+    empname: "ABC",
     age:33,
     salary:21134.12,
     hobbies:["singing","Swimming"],
-    reportees:{empno:2233,empname:"Banglore",age:22,salary:28000,hobbies:["coding","Testing","Reading"]}
+    reportees:{empno:2233,empname:"Banglore",age:22,salary:68000,hobbies:["coding","Testing","Reading"]}
 };
 
 console.log(emp);
