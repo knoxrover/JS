@@ -15,7 +15,7 @@ let browserStartPromise = puppeteer.launch({
 
 let page,browser,rTab;
 
-//promise objects always needs to be consumed resolved or rjected
+//promise objects always needs to be consumed -> resolved or rjected
 browserStartPromise.then(function(browserObj){
     console.log("Browser opened");
     browser = browserObj;
@@ -68,6 +68,10 @@ browserStartPromise.then(function(browserObj){
     }).then(function(){
         console.log("Level 1 opened.");
     });
+
+
+
+    
 
 
 
