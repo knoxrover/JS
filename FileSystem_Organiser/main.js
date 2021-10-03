@@ -19,7 +19,7 @@ switch(command){
         hobj.helpFxn();
         break;
     default:
-        console.log("_/\\_ Enter a valid command.")
+        console.log("_/\\_ Please enter a proper command.")
         break;
 
 }

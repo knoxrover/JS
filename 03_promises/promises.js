@@ -21,8 +21,6 @@ freadPromise.then(function cb(data){
 
 //function passs for reject cases
 
-// either resolve by then or reject by catch
-
 freadPromise.catch(function cb(err){
     console.log("Error : "+err);
 })
