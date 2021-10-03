@@ -1,8 +1,6 @@
 //npm install pdf-lib
 //node FirstFolderCreation.js --source="" --dest="";
 
-
-const { create } = require("domain");
 let fs = require("fs");
 let minimist = require("minimist");
 let path = require("path");
