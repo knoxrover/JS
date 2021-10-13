@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="assignment2.css">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="assignment2.js"></script>
+    </head>
+    <body>
+    <div class="conatainer">
+        <table id="table">
+            <tr>
+            <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Duration</th>
+            </tr>
+        <tr>
+               <td>J1001</td>
+               <td>Programming in Java</td>
+               <td>30</td>
+            </tr>
+           <tr>
+               <td>J1002</td>
+               <td>Learning Springboot in 7 days</td>
+               <td>7</td>
+            </tr>
+            <tr>
+               <td>D2001</td>
+               <td>C# in simple way</td>   
+               <td>30</td>
+            </tr>
+            <tr>
+                <td>D2002</td>
+                <td>Web Programming with DotNet</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>DB3002</td>
+                <td>MySql for Data Manipulation</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>DB3005</td>
+                <td>Oracle for RDBMS</td>
+                <td>35</td>
+            </tr>
+        
+        </table>
+        <input type="text" placeholder="search keyword" class="text">
+        <button class="text">search</button>
+        </div>
+    </body>
+    
+</html>
+
+
+#table,th,td{
+    border: 1px solid red;
+    
+}
+#table td{
+    padding: 30px 90px 10px;
+}
+.search{
+    position: relative;
+}
+
+$(document).ready(function(){
+    $('#button').click(function(){
+                                     var value=$('#text').val().toLowerCase();
+                                     $('#table td:nth-child(2)').each(function(i){
+                                             var vval=$(this).text().toLowerCase();
+                                         
+                                         if(vval.includes(value)){
+                                             $(this).parent().show();
+                                              $('.search').show(); 
+                                         }else{
+                                           $(this).parent().hide();
+                                             $('.search').show(); 
+                                         }
+                                         
+                                     });                           
+                                 });
+});

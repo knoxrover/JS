@@ -1,0 +1,71 @@
+<html>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="assignment2.css">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="assignment2.js"></script>
+    </head>
+    <body>
+    <div class="red">
+        <p class="para">This is a red box </p>
+        </div>
+        
+      <body>
+    <div class="blue">
+        <p class="para">This is a blue box</p>
+        </div>
+    <body>
+    <div class="green">
+        <p class="para">This is a green box</p>
+        </div>    
+        <center><button id="toggle">Toggle Boxes</button></center>
+        <center><button id="scroll">scroll</button></center>
+    </body>
+    
+</html>
+
+
+.red{
+
+width:80px;height:80px;background-color:red;
+margin-left: 700px;
+}
+
+.blue{
+margin-left: 700px;
+width:80px;height:80px;background-color:blue;
+
+}
+
+.green{
+margin-left: 700px;
+width:80px;height:80px;background-color:green;
+    
+
+}
+#toggle{
+    position: relative;
+    top: 10px;
+    right:15px;
+}
+#scroll{
+    position: relative;
+    top: 20px;
+    right:17px;
+}
+
+$(document).ready(function()
+                 {
+                 $('#toggle').click(function()
+                     {
+                       $('.red').toggle(2000,"swing");
+                     $('.blue').toggle(2000,"swing");
+                     $('.green').toggle(2000,"swing");
+                    });
+                $('#scroll').click(function()
+                     {
+                        $('.para').css({overflow:"scroll"});
+                         
+                     });
+});
+     
