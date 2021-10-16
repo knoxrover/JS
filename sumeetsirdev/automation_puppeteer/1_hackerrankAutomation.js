@@ -45,7 +45,7 @@ async function run(){
 
     await page.keyboard.type(config.userid, {delay:100});
     await page.keyboard
-
+  
 
 
 }
