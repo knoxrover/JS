@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "axios": "^0.21.4",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "pdf-lib": "^1.16.0",
     "puppeteer": "^10.4.0",
     "request": "^2.88.2",
