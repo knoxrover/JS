@@ -58,7 +58,8 @@ function Person(firstName, lastName, dob,cb){
     this.getFullName= `${firstName} ${lastName}`
 
 }
-
+// Here "this" is basically a keyword that refers to the OBJECT it belongs to.
+// if it is alone, with out including inside any function, then it refers to a global object.
 
 
 
